@@ -1,13 +1,23 @@
 package homework;
 
-public class Persister{
-    private final User user;
+public class Teacher extends User{
+    private Integer teacherId;
 
-    public Persister(User user){
-        this.user = user;
+    public Teacher(Integer teacherId, String name, String lastName){
+        super(name, lastName);
+        this.teacherId=teacherId;
+            
     }
-
-    public void save(){
-        System.out.println("Save user: " + user.getName());
+    public Integer getTeacherId() {
+        return teacherId;
     }
-}
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
+    }
+    
+          
+    public void update(){
+        System.out.println("Update teacher: "  + "id " + getTeacherId() + ","  + " name" + " " + getName() + "," + " " +   "lastname" + " " + getLastname());
+    }
+    
+}   
