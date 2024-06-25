@@ -1,23 +1,36 @@
 package homework;
 
-public class Teacher extends User{
-    private Integer teacherId;
+public class User{
+    private String name;
+    private String lastname;
 
-    public Teacher(Integer teacherId, String name, String lastName){
-        super(name, lastName);
-        this.teacherId=teacherId;
-            
+    public User(String name, String lastname){
+        this.name = name;
+        this.lastname = lastname;
     }
-    public Integer getTeacherId() {
-        return teacherId;
-    }
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
-    }
+
+    public void setname(String name) {
+		this.name = name;
+	}
+    public void setlastname(String lastname) {
+		this.lastname = lastname;
+	}
     
-          
+
+    public String getName(){
+        return name;
+    }
+
+    public String getLastname(){
+        return lastname;
+    }
+
     public void update(){
-        System.out.println("Update teacher: "  + "id " + getTeacherId() + ","  + " name" + " " + getName() + "," + " " +   "lastname" + " " + getLastname());
+        Teacher teacher = new Teacher(null, name, lastname);
+        teacher.update();
     }
-    
-}   
+
+    public void report(){
+        System.out.println("Report for user: "  + name);
+    }
+} 
