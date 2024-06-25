@@ -1,22 +1,23 @@
 package homework;
 
-public class User{
-    private final String name;
+public class Teacher extends User{
+    private Integer teacherId;
 
-    public User(String name){
-        this.name = name;
+    public Teacher(Integer teacherId, String name, String lastName){
+        super(name, lastName);
+        this.teacherId=teacherId;
+            
     }
-
-    public String getName(){
-        return name;
+    public Integer getTeacherId() {
+        return teacherId;
     }
-
-    public void save(){
-        Persister persister = new Persister(this);
-        persister.save();
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
     }
-
-    public void report(){
-        System.out.println("Report for user: " + name);
+    
+          
+    public void update(){
+        System.out.println("Update teacher: "  + "id " + getTeacherId() + ","  + " name" + " " + getName() + "," + " " +   "lastname" + " " + getLastname());
     }
-}
+    
+}   
